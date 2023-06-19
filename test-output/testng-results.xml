@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-16T22:30:01 IST" name="Suite" finished-at="2023-06-16T22:30:22 IST" duration-ms="21334">
+  <suite started-at="2023-06-19T12:02:13 IST" name="Suite" finished-at="2023-06-19T12:02:31 IST" duration-ms="18369">
     <groups>
     </groups>
-    <test started-at="2023-06-16T22:30:01 IST" name="Test1" finished-at="2023-06-16T22:30:22 IST" duration-ms="21334">
+    <test started-at="2023-06-19T12:02:13 IST" name="Test1" finished-at="2023-06-19T12:02:31 IST" duration-ms="18369">
       <class name="LoginPage_OrangeHRM.TC_004">
-        <test-method is-config="true" signature="configBeforeMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-16T22:30:01 IST" name="configBeforeMethod" finished-at="2023-06-16T22:30:15 IST" duration-ms="14227" status="PASS">
+        <test-method is-config="true" signature="configBeforeMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:13 IST" name="configBeforeMethod" finished-at="2023-06-19T12:02:25 IST" duration-ms="11543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBeforeMethod -->
-        <test-method signature="EnterInvalidUserName()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-16T22:30:15 IST" name="EnterInvalidUserName" finished-at="2023-06-16T22:30:22 IST" duration-ms="6225" status="PASS">
+        <test-method signature="EnterInvalidUserName()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:25 IST" name="EnterInvalidUserName" finished-at="2023-06-19T12:02:31 IST" duration-ms="5951" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterInvalidUserName -->
-        <test-method is-config="true" signature="configAfterMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-16T22:30:22 IST" name="configAfterMethod" finished-at="2023-06-16T22:30:22 IST" duration-ms="499" status="PASS">
+        <test-method is-config="true" signature="configAfterMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:31 IST" name="configAfterMethod" finished-at="2023-06-19T12:02:31 IST" duration-ms="488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAfterMethod -->

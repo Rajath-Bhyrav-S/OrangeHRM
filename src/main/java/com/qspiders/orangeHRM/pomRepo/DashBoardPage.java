@@ -19,6 +19,13 @@ public class DashBoardPage
 	
 	@FindBy(xpath = "//a[normalize-space()='Logout']")
 	private WebElement LogoutButton;
+	
+	@FindBy(xpath = "//span[normalize-space()='PIM']")
+	private WebElement Pim;
+
+	public WebElement getPim() {
+		return Pim;
+	}
 
 	public WebElement getProfileDropDown() {
 		return ProfileDropDown;

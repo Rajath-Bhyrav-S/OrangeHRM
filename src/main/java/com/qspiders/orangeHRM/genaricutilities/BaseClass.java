@@ -4,6 +4,7 @@ import java.io.File;
 
 
 import java.io.IOException;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -51,6 +52,15 @@ public class BaseClass {
 	File target = new File(System.getProperty("user.dir")+"/Screenshots/"+ tname+ ".png");
 	FileUtils.copyFile(source,target);
 	}
+	
+	
+	 public int generateRandomNumber(int numberOfDigits) {
+	        int minimum = (int) Math.pow(10, numberOfDigits - 1);
+	        int maximum = (int) Math.pow(10, numberOfDigits) - 1;
+	        Random random = new Random();
+	        return random.nextInt((maximum - minimum) + 1) + minimum;
+	    }
+	}
 
 
-}
+
