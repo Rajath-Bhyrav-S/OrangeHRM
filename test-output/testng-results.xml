@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-19T12:02:13 IST" name="Suite" finished-at="2023-06-19T12:02:31 IST" duration-ms="18369">
+  <suite started-at="2023-06-19T23:37:46 IST" name="Default suite" finished-at="2023-06-19T23:38:11 IST" duration-ms="24354">
     <groups>
     </groups>
-    <test started-at="2023-06-19T12:02:13 IST" name="Test1" finished-at="2023-06-19T12:02:31 IST" duration-ms="18369">
-      <class name="LoginPage_OrangeHRM.TC_004">
-        <test-method is-config="true" signature="configBeforeMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:13 IST" name="configBeforeMethod" finished-at="2023-06-19T12:02:25 IST" duration-ms="11543" status="PASS">
+    <test started-at="2023-06-19T23:37:46 IST" name="Default test" finished-at="2023-06-19T23:38:11 IST" duration-ms="24354">
+      <class name="EndToEndTesting_OrangeHRM.CreateNewEmployee">
+        <test-method is-config="true" signature="configBeforeMethod()[pri:0, instance:EndToEndTesting_OrangeHRM.CreateNewEmployee@3ce1e309]" started-at="2023-06-19T23:37:46 IST" name="configBeforeMethod" finished-at="2023-06-19T23:38:01 IST" duration-ms="14906" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBeforeMethod -->
-        <test-method signature="EnterInvalidUserName()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:25 IST" name="EnterInvalidUserName" finished-at="2023-06-19T12:02:31 IST" duration-ms="5951" status="PASS">
+        <test-method signature="createAnEmployee()[pri:0, instance:EndToEndTesting_OrangeHRM.CreateNewEmployee@3ce1e309]" started-at="2023-06-19T23:38:01 IST" name="createAnEmployee" finished-at="2023-06-19T23:38:09 IST" duration-ms="7938" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EnterInvalidUserName -->
-        <test-method is-config="true" signature="configAfterMethod()[pri:0, instance:LoginPage_OrangeHRM.TC_004@3bb9a3ff]" started-at="2023-06-19T12:02:31 IST" name="configAfterMethod" finished-at="2023-06-19T12:02:31 IST" duration-ms="488" status="PASS">
+        </test-method> <!-- createAnEmployee -->
+        <test-method is-config="true" signature="configAfterMethod()[pri:0, instance:EndToEndTesting_OrangeHRM.CreateNewEmployee@3ce1e309]" started-at="2023-06-19T23:38:09 IST" name="configAfterMethod" finished-at="2023-06-19T23:38:11 IST" duration-ms="1478" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAfterMethod -->
-      </class> <!-- LoginPage_OrangeHRM.TC_004 -->
-    </test> <!-- Test1 -->
-  </suite> <!-- Suite -->
+      </class> <!-- EndToEndTesting_OrangeHRM.CreateNewEmployee -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -7,9 +7,9 @@
 
 
 	<test name="Test1">
-		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="browser" value="edge"></parameter>
 		<classes>
-				<class name="LoginPage_OrangeHRM.TC_004"/>
+				<class name="EndToEndTesting_OrangeHRM.CreateNewEmployee"/>
 		</classes>
 	</test> <!-- Test -->
 	

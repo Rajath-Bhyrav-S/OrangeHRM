@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="OrangeHRMTestCases.Test_Id_001_LoginPage">
+      <class name="EndToEndTesting_OrangeHRM.CreateNewEmployee">
         <methods>
           <include name="configAfterMethod"/>
-          <include name="EnterValuesToHomePage"/>
+          <include name="createAnEmployee"/>
           <include name="configBeforeMethod"/>
         </methods>
-      </class> <!-- OrangeHRMTestCases.Test_Id_001_LoginPage -->
+      </class> <!-- EndToEndTesting_OrangeHRM.CreateNewEmployee -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
