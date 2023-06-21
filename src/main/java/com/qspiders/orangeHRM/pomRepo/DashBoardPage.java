@@ -45,7 +45,7 @@ public class DashBoardPage
 	@FindBy (xpath = "//button[normalize-space()='Add']")
 	private WebElement AddButton;
 	
-	@FindBy (xpath = "//input[@class='oxd-input oxd-input--focus']")
+	@FindBy (xpath = "//body/div[@id='app']/div[@class='oxd-layout']/div[@class='oxd-layout-container']/div[@class='oxd-layout-context']/div[@class='orangehrm-background-container']/div[@class='orangehrm-card-container']/div[@class='orangehrm-edit-employee']/div[@class='orangehrm-edit-employee-content']/div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']/form[@class='oxd-form']/div[@class='oxd-form-row']/div[@class='oxd-grid-3 orangehrm-full-width-grid']/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	private WebElement ExpieryDate;
 	
 	@FindBy (xpath = "//p[normalize-space()='June']")
@@ -57,10 +57,26 @@ public class DashBoardPage
 	@FindBy (xpath = "//li[@class='oxd-calendar-selector-year']//p[1]")
 	private WebElement PreviousButton;
 	
-	@FindBy (xpath = "//i[@class='oxd-icon bi-chevron-right']")
+	@FindBy (xpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]/i[1]")
 	private WebElement NextButton;
 	
+	@FindBy (xpath = "//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]")
+	private WebElement NationalityDropDown;
+	
+	@FindBy (xpath = "//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@class='oxd-input oxd-input--active']")
+	private WebElement EmployeeID;
+	
+	
 
+	public WebElement getExpieryDate() {
+		return ExpieryDate;
+	}
+	public WebElement getEmployeeID() {
+		return EmployeeID;
+	}
+	public WebElement getNationalityDropDown() {
+		return NationalityDropDown;
+	}
 	public WebElement getProfilePic() {
 		return ProfilePic;
 	}
@@ -107,6 +123,7 @@ public class DashBoardPage
 	public WebElement getNextButton() {
 		return NextButton;
 	}
+	
 	
 	
 	

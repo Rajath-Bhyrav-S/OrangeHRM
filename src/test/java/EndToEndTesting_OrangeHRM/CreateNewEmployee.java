@@ -4,12 +4,18 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.time.Month;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.xml.xpath.XPath;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -24,6 +30,7 @@ public class CreateNewEmployee extends BaseClass
 	{
 		loginPage lp = new loginPage(driver);
 		DashBoardPage dp = new DashBoardPage(driver);
+		
 		//Adding the valid ID and password
 		lp.getEmailIdTextField().sendKeys(fileUtils.readCommonData("username"));
 		lp.getPasswordTextField().sendKeys(fileUtils.readCommonData("password"));
@@ -38,11 +45,15 @@ public class CreateNewEmployee extends BaseClass
 		System.out.println("The middle name text field is entered");
 		dp.getLastNameTextField().sendKeys(generateRandomString(2));
 		System.out.println("The last name text field has been entered ");
+		/*dp.getEmployeeID().clear();
+		dp.getEmployeeID().sendKeys(generateRandomNumber(5));*/
 		dp.getProfilePic().click();
 		Robot rb = new Robot();
 		rb.delay(1000);
 		// Now i am copying the path of the image which i need to upload 
-		StringSelection ss = new StringSelection("C:\\Users\\rajat\\eclipse-workspace\\Rajath\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
+		//StringSelection ss = new StringSelection("C:\\Users\\rajat\\eclipse-workspace\\Rajath\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
+		StringSelection ss = new StringSelection("C:\\Users\\Lenovo\\eclipse-workspace\\OrangeHRM\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
+
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		
 		
@@ -61,43 +72,34 @@ public class CreateNewEmployee extends BaseClass
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);		
 		System.out.println("The enter function is done");
-		dp.getSaveButton().submit();
+		dp.getSaveButton().click();
 		System.out.println("The profile has been saved");
 		
 		
-		//Now click on the selecting the date of the lisence expiery 
+		//Now click on the selecting the date of the license expire
+		Thread.sleep(5000);
 		dp.getExpieryDateBox().click();
-		System.out.println("The date text box has been clicked");
-		while(true)
+		String Date = fileUtils.readCommonData("Expiry_Date");
+		String Month = fileUtils.readCommonData("Expiry_Month");
+		String Year = fileUtils.readCommonData("Expiry_Year");
+		dp.getExpieryDateBox().sendKeys(Year+"-"+Month+"-"+Date);
+		WebElement dpCountry = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]"));
+		dpCountry.click();
+		List<WebElement> options = driver.findElements(By.xpath("//div[@role='listbox']/div[@role='option']"));
+		for (WebElement options1 : options) 
 		{
-			String mon = dp.getExpieryMonth().getText();
-			String yr = dp.getExpieryYear().getText();
-			 String Year = fileUtils.readCommonData("Expiry_Year");
-			 String Month = fileUtils.readCommonData("Expiry_Month");
-			 String Date= fileUtils.readCommonData("Expiry_Date");
-			if(mon.equalsIgnoreCase(Month)&& yr.equals(Year))
+			if(options1.equals("Afghan"))
 			{
-				break;
+				options1.click();
+				System.out.println("click action performed");
 			}
-			else 
-			{
-				dp.getNextButton().click();
 			}
-			//Date selection 
-			List<WebElement> allDates = driver.findElements(By.xpath("//div[@class='oxd-calendar-dates-grid']/div"));
-			for(WebElement ele:allDates)
-			{
-				String dt =ele.getText();
-				if(dt.equals(Date))
-				{
-					ele.click();
-					break;
-				}
-			}
-				
-			
-		}
-		
+		Thread.sleep(2000);
 	}
-
 }
+		
+		
+		
+			
+		
+	
