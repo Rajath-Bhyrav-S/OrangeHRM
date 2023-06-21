@@ -17,7 +17,7 @@ public class DashBoardPage
 	public WebElement getAddButton() {
 		return AddButton;
 	}
-	//
+	
 	@FindBy(xpath = "//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']")
 	private WebElement ProfileDropDown;
 	
@@ -44,6 +44,22 @@ public class DashBoardPage
 	
 	@FindBy (xpath = "//button[normalize-space()='Add']")
 	private WebElement AddButton;
+	
+	@FindBy (xpath = "//input[@class='oxd-input oxd-input--focus']")
+	private WebElement ExpieryDate;
+	
+	@FindBy (xpath = "//p[normalize-space()='June']")
+	private WebElement ExpieryMonth;
+	
+	@FindBy (xpath = "//li[@class='oxd-calendar-selector-year']//p[1]")
+	private WebElement ExpieryYear;
+	
+	@FindBy (xpath = "//li[@class='oxd-calendar-selector-year']//p[1]")
+	private WebElement PreviousButton;
+	
+	@FindBy (xpath = "//i[@class='oxd-icon bi-chevron-right']")
+	private WebElement NextButton;
+	
 
 	public WebElement getProfilePic() {
 		return ProfilePic;
@@ -76,6 +92,22 @@ public class DashBoardPage
 	public WebElement getLogoutButton() {
 		return LogoutButton;
 	}
+	public WebElement getExpieryDateBox() {
+		return ExpieryDate;
+	}
+	public WebElement getExpieryMonth() {
+		return ExpieryMonth;
+	}
+	public WebElement getExpieryYear() {
+		return ExpieryYear;
+	}
+	public WebElement getPreviousButton() {
+		return PreviousButton;
+	}
+	public WebElement getNextButton() {
+		return NextButton;
+	}
+	
 	
 	
 

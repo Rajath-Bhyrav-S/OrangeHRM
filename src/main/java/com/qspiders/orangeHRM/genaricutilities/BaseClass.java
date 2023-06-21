@@ -23,7 +23,6 @@ public class BaseClass {
 	public XLUtils excelutils = new XLUtils(null);
 	public JavaUtlity javaUtils = new JavaUtlity();
 	public WebDriverUtlities webDriverUtils = new WebDriverUtlities();
-
 	@BeforeClass
 	public void configBeforeMethod() throws IOException {
 		String browserName = fileUtils.readCommonData("browser");
@@ -74,6 +73,8 @@ public class BaseClass {
 
 		    return sb.toString();
 		}
+	 
+	 
 
 	}
 

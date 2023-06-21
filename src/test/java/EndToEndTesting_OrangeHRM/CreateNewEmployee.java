@@ -4,7 +4,13 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Month;
+import java.util.Iterator;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.qspiders.orangeHRM.genaricutilities.BaseClass;
@@ -36,14 +42,14 @@ public class CreateNewEmployee extends BaseClass
 		Robot rb = new Robot();
 		rb.delay(1000);
 		// Now i am copying the path of the image which i need to upload 
-		StringSelection ss = new StringSelection("\"C:\\Users\\Lenovo\\Downloads\\iron_man_artwork_4k_2-min.jpg\"");
+		StringSelection ss = new StringSelection("C:\\Users\\rajat\\eclipse-workspace\\Rajath\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		
 		
 		//Now i am performing the CTRL + V function on the keyboard 
 		rb.keyPress(KeyEvent.VK_CONTROL);
 		rb.keyPress(KeyEvent.VK_V);
-		rb.delay(1000);
+		
 		System.out.println("The copy function is performed");
 		
 		rb.keyRelease(KeyEvent.VK_CONTROL);
@@ -54,11 +60,43 @@ public class CreateNewEmployee extends BaseClass
 		//Now i am performing the enter key operation 
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);		
-		rb.delay(1000);
 		System.out.println("The enter function is done");
-	
-		dp.getSaveButton().click();
+		dp.getSaveButton().submit();
 		System.out.println("The profile has been saved");
+		
+		
+		//Now click on the selecting the date of the lisence expiery 
+		dp.getExpieryDateBox().click();
+		System.out.println("The date text box has been clicked");
+		while(true)
+		{
+			String mon = dp.getExpieryMonth().getText();
+			String yr = dp.getExpieryYear().getText();
+			 String Year = fileUtils.readCommonData("Expiry_Year");
+			 String Month = fileUtils.readCommonData("Expiry_Month");
+			 String Date= fileUtils.readCommonData("Expiry_Date");
+			if(mon.equalsIgnoreCase(Month)&& yr.equals(Year))
+			{
+				break;
+			}
+			else 
+			{
+				dp.getNextButton().click();
+			}
+			//Date selection 
+			List<WebElement> allDates = driver.findElements(By.xpath("//div[@class='oxd-calendar-dates-grid']/div"));
+			for(WebElement ele:allDates)
+			{
+				String dt =ele.getText();
+				if(dt.equals(Date))
+				{
+					ele.click();
+					break;
+				}
+			}
+				
+			
+		}
 		
 	}
 
