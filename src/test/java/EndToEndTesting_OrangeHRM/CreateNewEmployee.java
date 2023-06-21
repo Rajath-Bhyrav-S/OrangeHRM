@@ -39,14 +39,17 @@ public class CreateNewEmployee extends BaseClass
 		System.out.println("Pim page has been opened");
 		dp.getAddButton().click();
 		System.out.println("Add button has been clicked");
-		dp.getFirstNameTextField().sendKeys(generateRandomString(5));
+		String FirstName = generateRandomString(5);
+		dp.getFirstNameTextField().sendKeys(FirstName);
 		System.out.println("The first name text field is entered");
-		dp.getMiddleNameTextField().sendKeys(generateRandomString(6));
+		String MiddleName = generateRandomString(5);
+		dp.getMiddleNameTextField().sendKeys(MiddleName);
 		System.out.println("The middle name text field is entered");
-		dp.getLastNameTextField().sendKeys(generateRandomString(2));
+		String LastName = generateRandomString(3);
+		dp.getLastNameTextField().sendKeys(LastName);
 		System.out.println("The last name text field has been entered ");
-		/*dp.getEmployeeID().clear();
-		dp.getEmployeeID().sendKeys(generateRandomNumber(5));*/
+		dp.getEmployeeID().clear();
+		dp.getEmployeeID().sendKeys(generateRandomString(4));
 		dp.getProfilePic().click();
 		Robot rb = new Robot();
 		rb.delay(1000);
@@ -83,18 +86,65 @@ public class CreateNewEmployee extends BaseClass
 		String Month = fileUtils.readCommonData("Expiry_Month");
 		String Year = fileUtils.readCommonData("Expiry_Year");
 		dp.getExpieryDateBox().sendKeys(Year+"-"+Month+"-"+Date);
-		WebElement dpCountry = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]"));
-		dpCountry.click();
-		List<WebElement> options = driver.findElements(By.xpath("//div[@role='listbox']/div[@role='option']"));
-		for (WebElement options1 : options) 
+
+		//Now the operations for Dropdown button of nationality is selected 
+		dp.getNationalityDropDown().click();
+		List<WebElement> options = driver.findElements(By.xpath("//div[@role='listbox']//div"));
+		System.out.println("No of options"+ options.size());
+		for(WebElement product: options)
 		{
-			if(options1.equals("Afghan"))
+			if(product.getText().equals("Indian"))
 			{
-				options1.click();
-				System.out.println("click action performed");
+				product.click();
+				System.out.println("Country Option was selected");
+				break;
 			}
+		}
+		
+		//Now the operations for drop down menu of maritial status begins 
+		dp.getMaritialStatus().click();
+		List<WebElement> MaritialOption = driver.findElements(By.xpath("//div[@role='listbox']//div"));
+		for(WebElement MO: MaritialOption)
+		{
+			if(MO.getText().equals("Single"))
+			{
+				MO.click();
+				System.out.println("Single option selected");
+				break;
 			}
+		}
+		
+		//Now the operations for Date of birth has begun 
+		dp.getDateOfBirth().click();
+		String BirthDay = fileUtils.readCommonData("Birth_Date");
+		String BirthMonth = fileUtils.readCommonData("Birth_Month");
+		String BirthYear = fileUtils.readCommonData("Birth_Year");
+		dp.getDateOfBirth().sendKeys(BirthYear+"-"+BirthMonth+"-"+BirthDay);
+		System.out.println("Date of birth has been selected");
+		
+		//Now clicking on the gender
+		dp.getGender().click();
+		System.out.println("Male gender has been chosen");
+		
+		//Now clicking on save
+		dp.getEmployeeListSaveButton().click();
+		System.out.println("The save button has been clicked");
+		
+		//Now going back to pim
+		dp.getPim().click();
+		
+		//Now search for employee
+		dp.getEmployeeName().sendKeys(FirstName);
 		Thread.sleep(2000);
+		
+		//Now click on search 
+		dp.getSearchOfPIM().click();
+		
+		//Now click on the delete button and confirm delete
+		dp.getDeleteEmployee().click();
+		dp.getConfirmDelete().click();
+		System.out.println("Last Element was clicked");
+		
 	}
 }
 		

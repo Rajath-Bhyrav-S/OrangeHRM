@@ -66,8 +66,63 @@ public class DashBoardPage
 	@FindBy (xpath = "//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@class='oxd-input oxd-input--active']")
 	private WebElement EmployeeID;
 	
+	@FindBy (xpath = "//div[@role='listbox']//div")
+	private WebElement CountryList;
 	
+	@FindBy (xpath = "//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']//button[@type='submit'][normalize-space()='Save']")
+	private WebElement SaveButton1;
+	
+	@FindBy (xpath = "//body/div[@id='app']/div[@class='oxd-layout']/div[@class='oxd-layout-container']/div[@class='oxd-layout-context']/div[@class='orangehrm-background-container']/div[@class='orangehrm-card-container']/div[@class='orangehrm-edit-employee']/div[@class='orangehrm-edit-employee-content']/div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']/form[@class='oxd-form']/div[@class='oxd-form-row']/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]")
+	private WebElement MaritialStatus;
+	
+	@FindBy (xpath = "(//input[@placeholder='yyyy-mm-dd'])[2]")
+	private WebElement DateOfBirth;
+	
+	@FindBy (xpath = "//label[normalize-space()='Male']")
+	private WebElement Gender;
+	
+	@FindBy (xpath = "(//input[@placeholder='Type for hints...'])[1]")
+	private WebElement EmployeeName;
+	
+	@FindBy (xpath = "//button[@type='submit']")
+	private WebElement SearchOfPIM;
+	
+	@FindBy(xpath = "//i[@class='oxd-icon bi-trash']")
+	private WebElement DeleteEmployee;
+	
+	@FindBy(xpath = "//button[normalize-space()='Yes, Delete']")
+	private WebElement ConfirmDelete;
 
+	public WebElement getEmployeeName() {
+		return EmployeeName;
+	}
+	public WebElement getSearchOfPIM() {
+		return SearchOfPIM;
+	}
+	public WebElement getDeleteEmployee() {
+		return DeleteEmployee;
+	}
+	public WebElement getConfirmDelete() {
+		return ConfirmDelete;
+	}
+	public WebElement getSaveButton1() {
+		return SaveButton1;
+	}
+	public WebElement getMaritialStatus() {
+		return MaritialStatus;
+	}
+	public WebElement getDateOfBirth() {
+		return DateOfBirth;
+	}
+	public WebElement getGender() {
+		return Gender;
+	}
+	public WebElement getEmployeeListSaveButton() {
+		return SaveButton1;
+	}
+	public WebElement getCountryList() {
+		return CountryList;
+	}
 	public WebElement getExpieryDate() {
 		return ExpieryDate;
 	}
