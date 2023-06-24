@@ -9,7 +9,7 @@
 	<test name="Test1">
 		<parameter name="browser" value="edge"></parameter>
 		<classes>
-				<class name="EndToEndTesting_OrangeHRM.CreateNewEmployee"/>
+				<class name="EndToEndTesting_OrangeHRM.uploadAndDeleteAPost"/>
 		</classes>
 	</test> <!-- Test -->
 	
