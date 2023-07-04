@@ -27,7 +27,7 @@ public class buzzPage
 	@FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-buzz-post-modal-actions']//button[1]")
 	private WebElement ShareButtonInSharePhotos;
 	
-	@FindBy(xpath = "((//button[@type='button'])[8]")
+	@FindBy(xpath = "((//div[@class='oxd-form-actions orangehrm-buzz-post-modal-actions']//button[1]")
 	private WebElement PostOptions;
 	
 	@FindBy(xpath = "//li[@class='--active']//li[1]")

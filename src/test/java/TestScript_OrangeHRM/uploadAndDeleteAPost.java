@@ -1,4 +1,4 @@
-package EndToEndTesting_OrangeHRM;
+package TestScript_OrangeHRM;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -39,6 +39,7 @@ public class uploadAndDeleteAPost extends BaseClass
 		bz.getTextBoxInSharePhotosButton().sendKeys(generateRandomString(200));
 		System.out.println("The text was updated");
 		bz.getUploadPhotoInSharePhotos().click();
+		Thread.sleep(1000);
 		System.out.println("The photo share button was clicked");
 		
 		//Now importing robot class for further progress 

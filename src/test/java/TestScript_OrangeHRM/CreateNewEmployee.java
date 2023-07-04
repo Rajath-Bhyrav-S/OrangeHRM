@@ -1,4 +1,4 @@
-package EndToEndTesting_OrangeHRM;
+package TestScript_OrangeHRM;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -54,8 +54,8 @@ public class CreateNewEmployee extends BaseClass
 		Robot rb = new Robot();
 		rb.delay(1000);
 		// Now i am copying the path of the image which i need to upload 
-		//StringSelection ss = new StringSelection("C:\\Users\\rajat\\eclipse-workspace\\Rajath\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
-		StringSelection ss = new StringSelection("C:\\Users\\Lenovo\\eclipse-workspace\\OrangeHRM\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
+		StringSelection ss = new StringSelection("C:\\Users\\rajat\\eclipse-workspace\\Rajath\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
+		//StringSelection ss = new StringSelection("C:\\Users\\Lenovo\\eclipse-workspace\\OrangeHRM\\src\\test\\sources\\iron_man_artwork_4k_2.jpg");
 
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		
